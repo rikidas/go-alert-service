@@ -36,11 +36,22 @@ This is an email sending service in Go. It allows you to send emails with a subj
 
 ## Usage
 
-Run the service from the command line passing the necessary arguments:
+Only log
+```sh
+./email-service --message="Este es un log" --mode=log
+```
+Only email:
 
 ```sh
-./email-service --email="email@example.com" --subject="Test" --message="This is a test message"
+./email-service --email="correo@ejemplo.com" --subject="Alerta" --message="Mensaje importante" --mode=mail
 ```
+Both
+
+```sh
+./email-service --email="correo@ejemplo.com" --subject="Alerta" --message="Mensaje importante" --mode=both
+
+```
+
 
 ## Recomendaciones
 Before using it with a Gmail account, configure the account to use Gmail's SMTP.

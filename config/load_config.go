@@ -9,16 +9,17 @@ import (
 )
 
 type configuration struct {
-	SMTP string
-	PORT int
-	USER string
-	PASS string
+	SMTP         string
+	PORT         int
+	USER         string
+	PASS         string
+	LOG_FILENAME string
 }
 
 func Load_config() (configuration, error) {
 
-	//err := godotenv.Load("../.env") //Para test
-	err := godotenv.Load(".env")
+	err := godotenv.Load("../.env") //Para test
+	//err := godotenv.Load(".env")
 
 	if err != nil {
 		log.Println("No se pudo leer el archivo de configuracion")
@@ -33,10 +34,11 @@ func Load_config() (configuration, error) {
 	}
 
 	return configuration{
-		SMTP: os.Getenv("SMTP_HOST"),
-		PORT: smtpPort,
-		USER: os.Getenv("SMTP_USER"),
-		PASS: os.Getenv("SMTP_PASS"),
+		SMTP:         os.Getenv("SMTP_HOST"),
+		PORT:         smtpPort,
+		USER:         os.Getenv("SMTP_USER"),
+		PASS:         os.Getenv("SMTP_PASS"),
+		LOG_FILENAME: os.Getenv("LOG_FILENAME"),
 	}, err
 
 }
