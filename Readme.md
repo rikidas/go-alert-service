@@ -39,5 +39,5 @@ Este es un servicio de envío de correos electrónicos en Go. Permite enviar cor
 Ejecuta el servicio desde la línea de comandos pasando los argumentos necesarios:
 
 ```sh
-go run cmd/main.go --email=correo@ejemplo.com --subject="Prueba" --message="Este es un mensaje de prueba"
+./email-service --email="correo@ejemplo.com" --subject="Prueba" --message="Este es un mensaje"
 ```
