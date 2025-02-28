@@ -8,7 +8,7 @@
             "mode": "auto",
             "program": "${workspaceFolder}/cmd/main.go",
             "envFile": "${workspaceFolder}/.env",
-            "args": []
+            "args": ["--email=example@gmail.com","--subject=Asunto de prueba","message=Mensaje de prueba"]
         }
     ]
 }

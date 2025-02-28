@@ -8,7 +8,7 @@ import (
 	"github.com/rikidas/go-email-service/config"
 )
 
-func Send_mail(to string) {
+func Send_mail(to string, subject string, message string) {
 
 	fmt.Println("Inciando")
 	m := gomail.NewMessage()
@@ -20,8 +20,8 @@ func Send_mail(to string) {
 
 	m.SetHeader("From", conf.USER)
 	m.SetHeader("To", to)
-	m.SetHeader("Subject", "Hello!")
-	m.SetBody("text/html", "Hello <b>Bob</b> and <i>Cora</i>!")
+	m.SetHeader("Subject", subject)
+	m.SetBody("text/html", message)
 
 	d := gomail.NewDialer(conf.SMTP, conf.PORT, conf.USER, conf.PASS)
 
