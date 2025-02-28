@@ -30,10 +30,20 @@ This is an email sending service in Go. It allows you to send emails with a subj
     SMTP_PORT=587
     SMTP_USER=your_user
     SMTP_PASS=your_password
+    LOG_FILENAME=logs.log
     ```
 
 2. Make sure the [.env](http://_vscodecontentref_/2) file is in the [.gitignore](http://_vscodecontentref_/3) to avoid uploading your credentials to the repository.
 
+## Linux deploy
+
+Run this commands on powershell
+
+```
+$env:GOOS="linux"
+$env:GOARCH="amd64"
+go build -o email-service cmd/main.go
+```
 ## Usage
 
 Only log
@@ -53,7 +63,7 @@ Both
 ```
 
 
-## Recomendaciones
+## Recomendations
 Before using it with a Gmail account, configure the account to use Gmail's SMTP.
 
 Also, make sure port 587 is open.
