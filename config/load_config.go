@@ -17,7 +17,8 @@ type configuration struct {
 
 func Load_config() (configuration, error) {
 
-	err := godotenv.Load("../.env")
+	//err := godotenv.Load("../.env") //Para test
+	err := godotenv.Load(".env")
 
 	if err != nil {
 		log.Println("No se pudo leer el archivo de configuracion")
