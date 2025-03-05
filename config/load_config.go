@@ -16,10 +16,10 @@ type configuration struct {
 	LOG_FILENAME string
 }
 
-func Load_config() (configuration, error) {
+func Load_config(ruta_env string) (configuration, error) {
 
-	err := godotenv.Load("../.env") //Para test
-	//err := godotenv.Load(".env")
+	//err := godotenv.Load("../.env") //Para test
+	err := godotenv.Load(ruta_env)
 
 	if err != nil {
 		log.Println("No se pudo leer el archivo de configuracion")

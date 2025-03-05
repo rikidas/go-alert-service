@@ -44,6 +44,22 @@ $env:GOOS="linux"
 $env:GOARCH="amd64"
 go build -o email-service cmd/main.go
 ```
+
+For Raspberry pi 3 or before
+
+```
+$env:GOOS="linux"; $env:GOARCH="arm"; $env:GOARM="7"; go build -o email-service main.go
+
+```
+
+For Windows
+
+```
+$env:GOOS="windows"; $env:GOARCH="amd64"; go build -o email-service.exe main.go
+
+```
+
+
 ## Usage
 
 Only log

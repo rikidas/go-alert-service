@@ -2,23 +2,15 @@ package logging
 
 import (
 	"fmt"
-	"log"
 	"os"
 	"time"
-
-	"github.com/rikidas/go-email-service/config"
 )
 
 // SaveLog guarda el log en un archivo con timestamp
-func SaveLog(log_string string) {
-
-	conf, err := config.Load_config()
-	if err != nil {
-		log.Panic("Error al cargar configuracion: ")
-	}
+func SaveLog(log_string string, log_filename string) {
 
 	// Crear o abrir el archivo de logs
-	file, err := os.OpenFile(conf.LOG_FILENAME, os.O_APPEND|os.O_CREATE|os.O_WRONLY, 0644)
+	file, err := os.OpenFile(log_filename, os.O_APPEND|os.O_CREATE|os.O_WRONLY, 0644)
 	if err != nil {
 		fmt.Println("Error al abrir el archivo de logs:", err)
 		return
