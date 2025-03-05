@@ -69,12 +69,12 @@ Only log
 Only email:
 
 ```sh
-./email-service --email="correo@ejemplo.com" --subject="Alerta" --message="Mensaje importante" --mode=mail
+./email-service --email="correo@ejemplo.com" --subject="Alerta" --message="Mensaje importante" --mode=mail --ruta_env="path_to .env" --log_filename="path to save log"
 ```
 Both
 
 ```sh
-./email-service --email="correo@ejemplo.com" --subject="Alerta" --message="Mensaje importante" --mode=both
+./email-service --email="correo@ejemplo.com" --subject="Alerta" --message="Mensaje importante" --mode=both --ruta_env="path_to .env" --log_filename="path to save log"
 
 ```
 
