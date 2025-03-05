@@ -64,7 +64,7 @@ $env:GOOS="windows"; $env:GOARCH="amd64"; go build -o email-service.exe main.go
 
 Only log
 ```sh
-./email-service --message="Este es un log" --mode=log
+./email-service --message="Este es un log" --mode=log --log_filename="path to save log"
 ```
 Only email:
 
@@ -82,4 +82,4 @@ Both
 ## Recomendations
 Before using it with a Gmail account, configure the account to use Gmail's SMTP.
 
-Also, make sure port 587 is open.
+Also, make sure port 587 is open on your machine. (Some cloud providers block it to prevent SPAM).
