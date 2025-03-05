@@ -1,4 +1,4 @@
-# Go Email Service
+# Go Alert Service
 
 This is an email sending service in Go. It allows you to send emails with a subject and message using the command line.
 
