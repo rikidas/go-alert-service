@@ -20,20 +20,26 @@ func main() {
 
 	flag.Parse()
 
-	conf, err := config.Load_config(*ruta_env)
-	if err != nil {
-		log.Panic("Error al cargar configuracion: ")
-	}
-
 	// Verificamos qué modo de ejecución eligió el usuario
 	switch *mode {
 	case "log":
 		logging.SaveLog(*message, *log_filename)
 		fmt.Println("Mensaje guardado en logs.")
 	case "mail":
+
+		conf, err := config.Load_config(*ruta_env)
+		if err != nil {
+			log.Panic("Error al cargar configuracion: ")
+		}
 		mailing.Send_mail(*email, *subject, *message, conf.USER, conf.PASS, conf.SMTP, conf.PORT)
 		fmt.Println("Correo enviado.")
 	case "both":
+
+		conf, err := config.Load_config(*ruta_env)
+		if err != nil {
+			log.Panic("Error al cargar configuracion: ")
+		}
+
 		logging.SaveLog(*message, *log_filename)
 		mailing.Send_mail(*email, *subject, *message, conf.USER, conf.PASS, conf.SMTP, conf.PORT)
 		fmt.Println("Mensaje guardado en logs y correo enviado.")
